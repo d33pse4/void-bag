@@ -1,7 +1,7 @@
 
 # frp
 
-#### [frp-是什么](../frp/frp-是什么.md)
+#### [frp-是什么](../network/frp-是什么.md)
 
 #### [frp-大概原理](../frp/frp-大概原理.md)
 

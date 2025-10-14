@@ -1,17 +1,17 @@
 
 # ftp
 
-#### [ftp-是什么](../ftp/ftp-是什么.md)
+#### [ftp-是什么](../network/ftp-是什么.md)
 
-#### [ftp-是基于-tcp-还是-udp-的](../ftp/ftp-是基于-tcp-还是-udp-的.md)
+#### [ftp-是基于-tcp-还是-udp-的](../network/ftp-是基于-tcp-还是-udp-的.md)
 
-#### [ftp-的客户端软件有哪些](../ftp/ftp-的客户端软件有哪些.md)
+#### [ftp-的客户端软件有哪些](../network/ftp-的客户端软件有哪些.md)
 
-#### [ftp-的服务端软件有哪些](../ftp/ftp-的服务端软件有哪些.md)
+#### [ftp-的服务端软件有哪些](../network/ftp-的服务端软件有哪些.md)
 
-#### [ftp-怎么安装](../ftp/ftp-怎么安装.md)
+#### [ftp-怎么安装](../network/ftp-怎么安装.md)
 
-#### [ftp-所使用的端口](../ftp/ftp-所使用的端口.md)
+#### [ftp-所使用的端口](../network/ftp-所使用的端口.md)
 
 #### [ftp-的通信模式与流程](../ftp/ftp-的通信模式与流程.md)
 
