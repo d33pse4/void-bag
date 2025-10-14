@@ -1,6 +1,6 @@
 # tmux
 
-p
+
 ### 简介
 
 #### [tmux-是什么](../network/tmux-是什么.md)
