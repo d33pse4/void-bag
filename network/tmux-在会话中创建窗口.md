@@ -1,5 +1,5 @@
 
-# [Ttmux-在会话中创建窗口mux](tmux.md#tmux-在会话中创建窗口)
+# [Ttmux-在会话中创建窗口mux](../index/tmux.md#tmux-在会话中创建窗口)
 
 ```
 ctrl + b c
