@@ -3,3 +3,6 @@
 Windows：Filezilla、WinSCP、等
 
 Linux：ftp等
+
+#FTP
+#文件传输

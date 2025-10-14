@@ -5,3 +5,4 @@
 ctrl + b w
 ```
 
+#tmux

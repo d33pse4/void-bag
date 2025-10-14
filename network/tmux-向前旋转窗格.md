@@ -4,3 +4,5 @@
 ```
 ctrl + b ctrl + o 向前旋转窗格
 ```
+
+#tmux

@@ -7,3 +7,5 @@ ctrl + b [
 
 然后，使用 pageUP、pageDown、UP、Down进行翻页
 ```
+
+#tmux

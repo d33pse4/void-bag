@@ -5,3 +5,5 @@ ctrl + d
 或
 ctrl + b x
 ```
+
+#tmux

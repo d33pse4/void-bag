@@ -7,3 +7,5 @@ tmux attach -t <session-name>
 tmux attach-session -t <session-name>
 
 ```
+
+#tmux

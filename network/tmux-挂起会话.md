@@ -6,3 +6,5 @@ ctrl + b d
 
 tmux detach
 ```
+
+#tmux

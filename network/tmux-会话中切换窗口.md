@@ -13,3 +13,5 @@ ctrl + b <num>
 tmux select-window -t <window-name/window-num>
 ```
 
+
+#tmux

@@ -27,3 +27,5 @@ hello: 1 windows (created Sun Apr 27 11:21:59 2025) (attached)
 -  (created Sun Apr 27 11:21:59 2025)：创建会话时间
 
 
+
+#tmux

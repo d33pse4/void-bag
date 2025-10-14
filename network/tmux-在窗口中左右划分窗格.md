@@ -7,3 +7,5 @@ ctrl + b %
 tmux split-window -h
 ```
 
+
+#tmux

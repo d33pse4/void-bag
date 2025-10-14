@@ -9,3 +9,5 @@ tmux new-window
 tmux new-window -n <window-name>
 
 ```
+
+#tmux

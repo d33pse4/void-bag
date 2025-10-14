@@ -10,3 +10,4 @@ tmux kill-window -t
 ```
 
 
+#tmux

@@ -4,3 +4,5 @@
 ```
 ctrl + b ctrl + <arrow key>
 ```
+
+#tmux

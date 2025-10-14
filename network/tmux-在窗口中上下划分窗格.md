@@ -5,3 +5,5 @@ ctrl + b "
 或
 tmux split-window
 
+
+#tmux

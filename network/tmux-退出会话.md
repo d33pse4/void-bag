@@ -6,3 +6,5 @@ ctrl + b : kill-session
 
 tmux kill-session -t <session-name>
 ```
+
+#tmux

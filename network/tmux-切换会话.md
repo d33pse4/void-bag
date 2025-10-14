@@ -10,3 +10,5 @@ ctrl + b s 后，选择要切换的会话
 
 tmux switch -t <session-name>
 ```
+
+#tmux

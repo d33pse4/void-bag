@@ -25,3 +25,5 @@ tmux select-pane -R
 ```
 
 
+
+#tmux

@@ -22,3 +22,5 @@ tmux swap-pane -U
 当前pane下移
 tmux swap-pane -D
 ```
+
+#tmux

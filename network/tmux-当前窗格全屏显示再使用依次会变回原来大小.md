@@ -6,3 +6,4 @@ ctrl + b z
 ```
 
 
+#tmux

@@ -5,3 +5,5 @@
 ctrl + b q 0-9
 ```
 
+
+#tmux
