@@ -16,7 +16,7 @@ tmux new-session -s hello
 
 ## # tmux-的快捷键的前缀键是什么
 
-tmux 执行一些快捷键操作时，需要先按下“前缀键”，`Ctrl + b`，再按快捷键，快捷键功能才能生效
+tmux 执行一些快捷键操作时，需要先按下“前缀键”，`Ctrl + b`，再按其他快捷键，快捷键功能才能生效
 
 ## # tmux-退出会话
 
@@ -36,7 +36,6 @@ tmux detach
 
 ```
 tmux a
-
 tmux attach
 ```
 
@@ -46,24 +45,24 @@ tmux attach
 tmux a -t <session-name>
 tmux attach -t <session-name>
 tmux attach-session -t <session-name>
-
 ```
 
-## # tmux-列出所有会话
+## # tmux-列出所有会话并切换
 
 ```
 ctrl + b s
+```
+再次按 q 或 ESC，则退出展示，可通过 UP、DOWN 选择会话，Enter 确认
 
 ```
-再次按 q 或 ESC，则退出展示
-
-可通过 UP、DOWN 选择会话，Enter 确认
-
-```
-
 tmux ls
 tmux list-session
+```
 
+```
+ctrl + b ( 切换上一个会话
+ctrl + b )  切换下一个会话
+tmux switch -t <session-name>
 ```
 
 ## # tmux-列出会话结果解析
@@ -83,7 +82,7 @@ tmux list-session
 
 - [tmux]\*Z：表示当前所在窗口
 - -：表示上一次所在的窗口
-- *：表示光窗口
+- *：表示光标所在窗格
 
 ```
 d33pse4@d33pse4Debian:~$ tmux ls
@@ -93,18 +92,6 @@ hello: 1 windows (created Sun Apr 27 11:21:59 2025) (attached)
 - hello： 会话名称
 -  (created Sun Apr 27 11:21:59 2025)：创建会话时间
 
-## # tmux-切换会话
-
-```
-ctrl + b ( 切换上一个会话
-
-ctrl + b )  切换下一个会话
-
-ctrl + b s 后，选择要切换的会话
-
-tmux switch -t <session-name>
-```
-
 ## # tmux-重命名当前会话
 
 ```
@@ -112,9 +99,9 @@ ctrl + b $
 tmux rename-session -t <old-name> <new-session>
 ```
 
+## # 标签
 
+#tmux
 
-
-
-
+## # 反链
 
