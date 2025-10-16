@@ -1,6 +1,15 @@
-# [frp-的-ssh-示例](../index/frp.md#frp-的-ssh-示例.md)
+# [frp-的-http-示例](../index/frp.md#frp-的-http-示例)
 
-## # 流程
+## # 通信流程
+
+启动 frps 后，公网服务器开始监听 7000 端口
+启动 frpc 后，内网计算机使用一个随机端口(port 1)，访问公网服务器的 7000 端口
+双方经过协商后，建立 **控制链路**（7000 <=> port 1），用于传输 **控制数据**
+同时，内网计算机通过 port 1 向 服务器 7000 发送请求，请求服务器监听 2233 端口
+服务器开始监听 2233 端口
+此时，用户请求 2233 
+
+## # 部署流程
 
 ### # 我使用的是阿里云 ECS
 
@@ -28,6 +37,8 @@
 ```
 # frp 服务绑定的端口，提供给内网计算机访问
 bindPort = 7000
+
+vhostHTTPPort = 2233
 ```
 
 ### # 将下载的  frpc、frpc.toml 在内网计算机上(自定义传输的目标位置)
@@ -43,12 +54,10 @@ serverAddr = "x.x.x.x"
 serverPort = 7000
 
 [[proxies]]
-name = "ssh"
-type = "tcp"
-localIP = "127.0.0.1"
-localPort = 22
-# 内网计算机要求外网服务器所开放的端口，最终，用户要通过外网服务器的 6000 来访问内网计算机的 ssh 服务
-remotePort = 6000
+name = "web"
+type = "http"
+localPort = 80
+customDomains = ["www.yourdomain.com"]
 ```
 
 ### # 在云服务器中，放行 frp 工作时所需要的端口
@@ -67,10 +76,10 @@ sudo ./frps -c frps.toml
 sudo ./frpc -c frpc.toml
 ```
 
-### # 确保内网计算机已运行 ssh 服务，并尝试通过命令行访问内网计算机 ssh 服务
+### # 确保内网计算机已运行 http 服务，并尝试通过浏览器访问内网计算机 http 服务
 
 ```
-ssh -o Port=6000 username@xx.xx.xx.xx
+http://xx.xx.xx.xx:2233
 ```
 
 
@@ -80,6 +89,6 @@ ssh -o Port=6000 username@xx.xx.xx.xx
 
 ## # 参考链接
 
-[FRP 官方文档](https://gofrp.org/zh-cn/docs/examples/ssh/)
+[FRP 官方文档](https://gofrp.org/zh-cn/docs/examples/vhost-http/)
 
 ## # 反链

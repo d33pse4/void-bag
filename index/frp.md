@@ -7,7 +7,7 @@
 
 #### [frp-的-ssh-示例](../network/frp-的-ssh-示例.md)
 
-#### [frp-的-http-示例](../frp/frp-的-http-示例.md)
+#### [frp-的-http-示例](../network/frp-的-http-示例.md)
 
 
 ## 标签
