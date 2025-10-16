@@ -2,7 +2,7 @@
 # [tmux-对窗口的操作](../index/tmux.md#tmux-对窗口的操作)
 
 
-## Ttmux-在会话中创建窗口mux
+## # Ttmux-在会话中创建窗口mux
 
 ```
 ctrl + b c
@@ -13,7 +13,7 @@ tmux new-window -n <window-name>
 
 ```
 
-## tmux-关闭会话中的窗口
+## # tmux-关闭会话中的窗口
 
 
 ```
@@ -25,7 +25,7 @@ tmux kill-window -t
 ```
 
 
-## tmux-会话中切换窗口
+## # tmux-会话中切换窗口
 
 ```
 切换到上一个window
@@ -39,14 +39,14 @@ ctrl + b <num>
 tmux select-window -t <window-name/window-num>
 ```
 
-## tmux-从列表中选择窗口
+## # tmux-从列表中选择窗口
 
 
 ```
 ctrl + b w
 ```
 
-## tmux-重命名会话中的窗口
+## # tmux-重命名会话中的窗口
 
 ```
 ctrl + b ,
