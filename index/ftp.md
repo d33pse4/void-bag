@@ -7,9 +7,7 @@
 
 #### [vsftpd-配置文件详解](../network/vsftpd-配置文件详解.md)
 
-#### [ftp-常用的选项](../network/ftp-的使用.md)
-
-#### [ftp-交互模式的命令](../network/ftp-交互模式的命令.md)
+#### [ftp-的使用](../network/ftp-的使用.md)
 
 
 
