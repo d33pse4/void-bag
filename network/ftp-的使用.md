@@ -4,7 +4,7 @@
 ## ftp 语法
 
 ```
-ftp [options] [host]
+ftp [options] <host> [port]
 ftp xx.xx.xx.xx
 ```
 host 可以是 IP 地址，也可以是 **域名**
@@ -13,11 +13,12 @@ host 可以是 IP 地址，也可以是 **域名**
 
 host: 可以是 IP 地址，也可以是域
 
-* -v：显示命令执行过程
+* -v：显示命令执行过程，相当于 verbose
 * -n：不使用自动登录
-* -d：详细显示指令执行过程，便于排错货分析程序执行的清醒
-* -i：关闭互动模式，不询问任何问题
-* -g：关闭本地主机文件名称支持特殊字符的扩充特性
+* -d：详细显示指令执行过程，便于排错货分析程序执行的清醒，相当于 debug
+* -i：关闭互动模式，不询问任何问题，相当于 prompt
+* -g：禁用通配符（*、?）
+* -A：使用匿名进行登录
 
 ## # 匿名登录
 
@@ -42,11 +43,11 @@ binary 模式：
 * ls：列出远程服务器上的文件和目录
 * cd：更改远程服务器上的目录
 * pwd：查看远程计算机目录路径
-* delete：删除远程服务器上的文件
-* mdelete：删除远程服务器上的多个文件
-* rename：重命名
-* mkdir：在远程服务器
-* rmdir：删除远程服务器上的目录
+* delete：删除远程服务器上的文件，示例：`delete <file_name>`
+* mdelete：删除远程服务器上的多个文件，示例：`mdelete <file_name>/通配符`
+* rename：重命名，示例：`rename <file_name / 目录名>`
+* mkdir：在远程服务器创建目录，示例：`mkdir <目录名>`
+* rmdir：删除远程服务器上的目录，示例：`rmdir <目录名>`
 
 本地：
 
@@ -55,15 +56,15 @@ binary 模式：
 * !ls / !dir：查看本地计算机目录
 * !cd / lpwd / !pwd: Windows 查看本地计算机目录路径
 * lcd：更改本地计算机上的目录
-* mdir / mls    不指定本地文件，用 -
+* mdir / mls 列出目录信息后写入本地文件或输出到显示器上，示例：`mls <command> <local_file>`，不指定本地文件，用 -，示例：`mls <command> -`
 
-* get / recv：从远程服务器下载文件到本地计算机
-* put / send：将本地文件上传到远程服务器
-* append：追加
-* mget：下载多个文件
-* mput：上传多个文件
+* get / recv：从远程服务器下载文件到本地计算机，示例：`get <file_name>`
+* put / send：将本地文件上传到远程服务器，示例：`put <file_name>`
+* append：使用本地文件向远程文件中追加文本内容，示例：`mget <local_file> <remote_file>`
+* mget：下载多个文件，示例：`mget <file_name>/通配符`
+* mput：上传多个文件，示例：`mput <file_name>/通配符`
 
-* open：连接到远程 FTP 服务器，示例：`open xx.xx.xx.xx`
+* open：连接到远程 FTP 服务器，示例：`open <host>`
 * close / disconnect：断开连接，但不退出 ftp 程序
 * bye 或 quit：断开与 FTP 服务器的连接并退出 ftp 程序
 * uesr：在连接后重新以其他用户名登录服务器。
