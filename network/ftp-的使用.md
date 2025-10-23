@@ -3,22 +3,19 @@
 ## ftp 语法
 
 ```
-ftp [options] <host> [port]
-ftp xx.xx.xx.xx
+ftp [options] <host/domain> [port]
 ```
-
-host 可以是 IP 地址，也可以是 **域名**
 
 ## ftp 常用选项
 
 host: 可以是 IP 地址，也可以是域
 
-* -v：显示命令执行过程，相当于 verbose
-* -n：不使用自动登录
-* -d：详细显示指令执行过程，便于排错货分析程序执行的清醒，相当于 debug
-* -i：关闭互动模式，不询问任何问题，相当于 prompt
-* -g：禁用通配符（*、?）
-* -A：使用匿名进行登录
+* -n：不使用自动登录，**之后不知道该怎么使用，登陆，切换pasv模式后，无法执行ls**
+* -v：显示命令执行过程，等价于交互命令中的 `verbose`
+* -d：详细显示指令执行过程，便于排错货分析程序执行的清醒，，等价于交互命令中的 `debug`
+* -i：关闭互动模式，不询问任何问题，等价于交互命令中的 `prompt`
+* -g：禁用通配符（*、?），等价于交互命令中的 `glob`
+* -A：匿名登录
 
 ## # 匿名登录
 
@@ -75,6 +72,8 @@ binary 模式：
 * uesr：在连接后重新以其他用户名登录服务器。
 
 * status：查看当前 FTP 各种设置的状态
+* ascii：直接切换 ascii 模式（默认为 ascii 模式）
+* binary：直接切换 binary 模式
 * verbose：详细模式开关，默认为：开启详细模式，详细模式会显示所有 FTP 服务器响应的信息
 * bell：响铃开关，当一个文件完成传输时，计算机会发出 “嘀” 的响声
 * prompt：交互提示开关
@@ -83,8 +82,7 @@ binary 模式：
 * trace：比 debug 更详细
 * hash：进度条
 * type：查询或设置文件传输模式 ascii 或 binary
-* ascii：直接切换 ascii 模式（默认为 ascii 模式）
-* binary：直接切换 binary 模式
+
 
 不常用
 remotehelp 
@@ -93,3 +91,43 @@ quote
 
 #FTP
 #文件传输
+
+
+PS C:\Users\d33pse4> ftp -n 123.56.106.144
+连接到 123.56.106.144。
+220 (vsFTPd 3.0.5)
+200 Always in UTF8 mode.
+ftp> d33pse4
+无效命令。
+ftp> user
+用户名 d33pse4
+331 Please specify the password.
+密码:
+
+230 Login successful.
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+wei
+zhang
+226 Directory send OK.
+ftp: 收到 15 字节，用时 0.00秒 15.00千字节/秒。
+ftp> bye
+221 Goodbye.
+
+PS C:\Users\d33pse4> ftp -n 123.56.106.144
+连接到 123.56.106.144。
+220 (vsFTPd 3.0.5)
+200 Always in UTF8 mode.
+ftp> ls
+530 Please login with USER and PASS.
+530 Please login with USER and PASS.
+ftp> user
+用户名 d33pse4
+331 Please specify the password.
+密码:
+
+230 Login successful.
+ftp> ls
+425 Use PORT or PASV first.
+ftp>

@@ -8,7 +8,6 @@ FTP 全称 File Transfer Protocol，中文名字，文件传输协议，简称 F
 
 ## # ftp-是基于-tcp-还是-udp-的
 
-
 FTP 是一种基于 TCP 的协议，采用 C / S 模式，不支持 UDP 的协议
 
 ## # ftp-的客户端软件有哪些
@@ -38,26 +37,3 @@ Linux：vsftpd、ProFTPD、wu-ftpd、lukemftpd，其中 vsftpd 为大部分 Linu
 ## # 标签
 
 #FTP #文件传输
-
-
-
-## # 反链
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
