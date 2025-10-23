@@ -1,12 +1,12 @@
 # [ftp-的使用](../index/ftp.md#ftp-的使用)
 
-
 ## ftp 语法
 
 ```
 ftp [options] <host> [port]
 ftp xx.xx.xx.xx
 ```
+
 host 可以是 IP 地址，也可以是 **域名**
 
 ## ftp 常用选项
@@ -24,6 +24,9 @@ host: 可以是 IP 地址，也可以是域
 
 ftp 允许用户匿名登录，也就是说，不需要密码，只需要在账号的位置输入 anonymous，口令留空，就可以登录，前提是服务器的 ftp 服务配置了允许匿名登录
 
+匿名用户登录后所在目录
+/srv/ftp
+
 ## # ascii 模式 和 binary 模式有什么区别
 
 ascii 模式：
@@ -33,6 +36,8 @@ ascii 模式：
 binary 模式：
 
 使用 bin 模式，会将源文件以字节的形式，原封不动的传输，适用于所有文件，但可能文本文件中的换行就没有了，导致没有换行的效果，但现代编辑器非常成熟、强壮，会自动弥补这个问题
+
+优先使用 binary 模式
 
 ## ftp 交互式命令
 
@@ -60,7 +65,7 @@ binary 模式：
 
 * get / recv：从远程服务器下载文件到本地计算机，示例：`get <file_name>`
 * put / send：将本地文件上传到远程服务器，示例：`put <file_name>`
-* append：使用本地文件向远程文件中追加文本内容，示例：`mget <local_file> <remote_file>`
+* append：使用本地文件内容追加到远程文件末尾，示例：`mget <local_file> <remote_file>`
 * mget：下载多个文件，示例：`mget <file_name>/通配符`
 * mput：上传多个文件，示例：`mput <file_name>/通配符`
 
@@ -84,11 +89,6 @@ binary 模式：
 不常用
 remotehelp 
 quote
-
-    
-
-
-
 
 
 #FTP
