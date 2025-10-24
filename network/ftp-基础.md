@@ -22,7 +22,7 @@ Linux：vsftpd、ProFTPD、wu-ftpd、lukemftpd，其中 vsftpd 为大部分 Linu
 
 ## # ftp-怎么安装
 
-以 Linux 为例：
+以 Debian Linux 为例：
 
 服务端：`sudo apt install vsftpd`
 
