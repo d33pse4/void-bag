@@ -1,8 +1,12 @@
-# [frp-的-http-示例](../index/frp.md#frp-的-http-示例)
+# [frp-的-http-示例](../index/frp-index.md#frp-的-http-示例)
 
 ## # 通信原理
 
-1. 启动 frps 后，公网服务器开始监听 7000、2233 (内网计算机映射在公网的端口) 端口
+![FRP-HTTP](http://123.56.106.144:2233/imgs/FRP-HTTP.png)
+
+![FRP-HTTP](http://123.56.106.144:2233/imgs/OIP.jpg)
+
+1. 启动 frps 后，公网服务器开始监听 7000、2233 (内网计算机映射在公网的端口，用户访问公网服务器的 2233 就相当于访问内网服务器的 80) 端口
 
 2. 启动 frpc 后，内网计算机使用一个随机端口(内网计算机-随机端口-1)，访问公网服务器的 7000 端口
 
@@ -44,37 +48,36 @@
 
 内网计算机需要用：frp_0.65.0_linux_arm64.tar.gz
 
-
 ### # 将下载的 frps、frps.toml 传输到云服务器(自定义传输的目标位置)
 
-我直接传输到 /home/username 目录上了
+我直接传输到 **/opt/frp** 目录上了
 
 ### # 修改 frps.toml 配置文件
 
 ```
 # frp 服务绑定的端口，提供给内网计算机访问
 bindPort = 7000
-
+# 用户计算机访问外网服务器的端口
 vhostHTTPPort = 2233
 ```
 
 ### # 将下载的  frpc、frpc.toml 在内网计算机上(自定义传输的目标位置)
 
-我直接传输到我的 /home/username 目录上了
+我直接传输到我的 **/opt/frp** 目录上了
 
 ### # 修改 frpc.toml 配置文件
 
 ```
 # 外网服务器 IP
 serverAddr = "x.x.x.x"
-# 外网服务器 Port，内网计算机访问外网服务器的端口
+# 网服务器的 Port
 serverPort = 7000
 
 [[proxies]]
 name = "web"
 type = "http"
 localPort = 80
-customDomains = ["www.yourdomain.com"]
+customDomains = ["www.xx.com"]
 ```
 
 ### # 在云服务器中，放行 frp 工作时所需要的端口
@@ -98,7 +101,6 @@ sudo ./frpc -c frpc.toml
 ```
 http://xx.xx.xx.xx:2233
 ```
-
 
 ## # 标签
 

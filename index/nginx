@@ -1,0 +1,15 @@
+
+nginx
+
+nginx.conf
+
+```conf
+# nginx 将网站转化为目录
+autoindex on;
+```
+
+```conf
+# 设置网站字符编码
+ charset utf-8;
+```
+

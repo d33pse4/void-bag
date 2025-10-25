@@ -1,4 +1,4 @@
-# [frp-工作原理](../index/frp.md#frp-工作原理)
+# [frp-工作原理](../index/frp-index.md#frp-工作原理)
 
 
 FRP 是 C / S 架构的应用程序，分为客户端 **frpc** 和 服务端 **frps**

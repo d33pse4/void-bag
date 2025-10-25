@@ -1,8 +1,8 @@
-# [frp-的-ssh-示例](../index/frp.md#frp-的-ssh-示例.md)
+# [frp-的-ssh-示例](../index/frp-index.md#frp-的-ssh-示例.md)
 
-## # 流程
+## # 部署流程
 
-### # 我使用的是阿里云 ECS
+### # 准备一台具有外网 ip 服务器
 
 我使用的是阿里云 ECS
 
@@ -21,25 +21,25 @@
 
 ### # 将下载的 frps、frps.toml 传输到云服务器(自定义传输的目标位置)
 
-我直接传输到 /home/username 目录上了
+我传输到了 **/opt/frp** 目录上
 
 ### # 修改 frps.toml 配置文件
 
-```
+```toml
 # frp 服务绑定的端口，提供给内网计算机访问
 bindPort = 7000
 ```
 
 ### # 将下载的  frpc、frpc.toml 在内网计算机上(自定义传输的目标位置)
 
-我直接传输到我的 /home/username 目录上了
+我传输到了 **/opt/frp** 目录上
 
 ### # 修改 frpc.toml 配置文件
 
-```
+```toml
 # 外网服务器 IP
 serverAddr = "x.x.x.x"
-# 外网服务器 Port，内网计算机访问外网服务器的端口
+# 外网服务器的 Port
 serverPort = 7000
 
 [[proxies]]
@@ -47,7 +47,7 @@ name = "ssh"
 type = "tcp"
 localIP = "127.0.0.1"
 localPort = 22
-# 内网计算机要求外网服务器所开放的端口，最终，用户要通过外网服务器的 6000 来访问内网计算机的 ssh 服务
+# 用户计算机访问外网服务器的端口
 remotePort = 6000
 ```
 
@@ -57,22 +57,24 @@ remotePort = 6000
 
 ### # 服务器端运行命令
 
-```
+```bash
 sudo ./frps -c frps.toml
 ```
 
 ### # 客户端运行命令
 
-```
+```bash
 sudo ./frpc -c frpc.toml
 ```
 
-### # 确保内网计算机已运行 ssh 服务，并尝试通过命令行访问内网计算机 ssh 服务
+### # 使用计算机连接内网计算机 ssh 服务
 
-```
+
+
+```bash
 ssh -o Port=6000 username@xx.xx.xx.xx
 ```
-
+确保内网计算机已运行 ssh 服务，并尝试通过命令行访问内网计算机 ssh 服务
 
 ## # 标签
 

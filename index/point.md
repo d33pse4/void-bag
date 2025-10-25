@@ -4,7 +4,7 @@ point
 
 #### [markdown](../network/markdown.md)
 
-#### [vmwareActivationCode](../network/vmwareActivationCode.md)
+#### [debian-install](../point/debian-install.md)
 
 
 

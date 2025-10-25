@@ -1,9 +1,7 @@
 
-# frp
+# frp-index
 
-#### [frp-是什么](../network/frp-是什么.md)
-
-#### [frp-工作原理](../network/frp-的工作原理.md)
+#### [frp](../network/frp.md)
 
 #### [frp-的-ssh-示例](../network/frp-的-ssh-示例.md)
 
